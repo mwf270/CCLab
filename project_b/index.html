@@ -8,6 +8,9 @@
     #container{
         width: 720px;
         margin:0 auto;
+        padding-top: 40px;
+        padding-bottom: 20px;
+        text-align: center;
     }
 
     h1{
@@ -18,21 +21,20 @@
 
     p{
         padding: 15px 40px;
-        border: 1px solid rgb(93, 124, 233);
+        border: 4px solid rgb(93, 124, 233);
         border-radius: 5px;
         margin: 40px 0;
+        text-align: center;
     }
 
     .column{
         width: 50%;
         float: left;
         padding-left: 40px;
-        padding-bottom: 30px;
+        padding-bottom: 60px;
+        
     }
 
-    #background{
-        background-color: rgb(93, 124, 233);
-    }
 
     #startbutton{
         border-radius: 25px;
@@ -51,22 +53,32 @@
 </head>
   <body>
       <h1> A Taste of Guatemalan Food</h1>
-      <div id="container">
-          <p>Shuco is one of the most delicious street food in Guatemala. 
-              It is a perfect meal for birthday parties, late night snacks, 
-              or on walks around the park. Shuco means "dirty" in Guatemala, 
-              and they called it this because of the amount of ingredients it has 
-              and how messy it is to eat it.
-          </p>
-          <a href="sketch.html"><p id="startbutton"> Press Start</p></a>
+
       </div>
+
+      <div id="container">
+        <img src="images/Guate.png" alt="Guatemalan Flag" width="55%">
+    </div>
+
+    <div id="container">
+        <p>Shuco is one of the most delicious street food in Guatemala. 
+            It is a perfect meal for birthday parties, late night snacks, 
+            or on walks around the park. Shuco means "dirty" in Guatemala, 
+            and they called it this because of the amount of ingredients it has 
+            and how messy it is to eat it.
+        </p>
+    </div>
+
+    <div id="container">
+        <p> Catch the ingredients and have a taste of Guatemalan food!</p>
+    </div>
+
+        <div class="column">
+            <img src="images/Shuco.jpg" alt="Shuco" width="55%">
+        </div>
     
-    <div class="column">
-        <img src="images/Shuco.jpg" alt="Shuco" width="55%">
-    </div>
-    <div class="column">
-        <script src="sketch.js"></script>
-    </div>
-  
+        <div class="column">
+            <script src="sketch.js"></script>
+        </div>
 
 </body></html>
