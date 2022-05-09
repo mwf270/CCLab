@@ -24,16 +24,46 @@ function draw() {
     counterToBlue = counterToBlue - 1;
   }
 
+  if (random(100) > 99.5) {
+    let avocado = new Avocado("avocado", random(width), 0);
+    ingredients.push(avocado);
+  }
+  if (random(100) > 99.7) {
+    let ketchup = new Ketchup("ketchup", 300, 0);
+    ingredients.push(ketchup);
+  }
+  if (random(100) > 99.6) {
+    let mayo = new Mayo("mayo", 400, 50);
+    ingredients.push(mayo);
+  }
+  if (random(100) > 99.7) {
+    let chicken = new Chicken("chicken", 300, 50);
+    ingredients.push(chicken);
+  }
+  if (random(100) > 99.5) {
+    let sausage = new Sausage("sausage", 200, 0);
+    ingredients.push(sausage);
+  }
+
   push();
-  fill(250, 190, 70);
-  stroke(205, 140, 10);
-  strokeWeight(3);
   let x = mouseX;
   //x = constrain(x, 100, 500);
   let y = mouseX - 100;
   y = constrain(x, 100, 500);
-  ellipse(x, 635 - 75, 200, 75, 10);
-  // line(x-60,635-75,160,y-60);
+
+  //Pan Adentro
+  fill(255);
+  stroke(205, 140, 10);
+  strokeWeight(3);
+  ellipse(x, 625 - 75, 200, 75, 10);
+  
+  //Pan Afuera
+  fill(250, 190, 70);
+  ellipse(x, 640 - 75, 200, 60, 10);
+
+  //line(x - 20, 640 - 65 - 40, x + 40, 590 - 55 + 40);
+  //line(x - 20, 640 - 45 - 30, x + 40, 590 - 35 + 40);
+  //line(x - 40, 645 - 65 - 40, x + 60, 595 - 55 + 40);
   pop();
 
   for (let i = 0; i < ingredients.length; i++) {
@@ -59,7 +89,6 @@ class Avocado {
       if (oldY < 600 - 75 && this.y >= 600 - 75) {
         if (this.x > mouseX - 100 && this.x < mouseX + 100) {
           this.falling = false;
-          this.x = mouseX - this.x;
           counterToBlue = 60;
           specialBackgroundColor = color(95, 235, 140);
         }
@@ -104,7 +133,6 @@ class Mayo {
       if (oldY <= 600 - 75 && this.y >= 600 - 75) {
         if (this.x > mouseX - 100 && this.x < mouseX + 100) {
           this.falling = false;
-          this.x = mouseX - this.x;
           counterToBlue = 60;
           specialBackgroundColor = color(255);
         }
@@ -134,19 +162,19 @@ class Mayo {
     rect(0, 20, 40, 15);
 
     //Text
-    //fill(255);
+    fill(255);
     //textAlign(CENTER);
-    //text('M',20,10);
+    text("M", 15, 32);
     pop();
   }
 }
 
-class Chicken {
-  constructor(chicken, x, y) {
+class Ketchup {
+  constructor(ketchup, x, y) {
     this.x = x;
     this.y = y;
 
-    this.speedY = 5;
+    this.speedY = 7;
     this.falling = true;
   }
   move() {
@@ -158,7 +186,54 @@ class Chicken {
       if (oldY <= 600 - 75 && this.y >= 600 - 75) {
         if (this.x > mouseX - 100 && this.x < mouseX + 100) {
           this.falling = false;
-          this.x = mouseX - this.x;
+          counterToBlue = 60;
+          specialBackgroundColor = color(200, 30, 30);
+        }
+      }
+    } else {
+      this.x = mouseX - 3;
+    }
+  }
+  display() {
+    push();
+    fill(200, 30, 30);
+    //stroke(135,20,20);
+    stroke(120, 45, 45);
+    strokeWeight(2);
+    translate(this.x, this.y);
+
+    //Package
+    rect(0, 0, 40, 70);
+    fill(255);
+    rect(5, 5, 30, 55);
+
+    //Tomato
+    fill(200, 30, 30);
+    ellipse(20, 40, 23, 17);
+    fill(45, 175, 85);
+    noStroke();
+    ellipse(20, 32, 15, 5);
+    rect(17, 25, 5, 7);
+    pop();
+  }
+}
+class Chicken {
+  constructor(chicken, x, y) {
+    this.x = x;
+    this.y = y;
+
+    this.speedY = 4;
+    this.falling = true;
+  }
+  move() {
+    if (this.falling) {
+      let oldY = this.y;
+
+      this.y = this.y + this.speedY;
+
+      if (oldY <= 600 - 75 && this.y >= 600 - 75) {
+        if (this.x > mouseX - 100 && this.x < mouseX + 100) {
+          this.falling = false;
           counterToBlue = 60;
           specialBackgroundColor = color(215, 160, 25);
         }
@@ -206,7 +281,6 @@ class Sausage {
       if (oldY <= 600 - 75 && this.y >= 600 - 75) {
         if (this.x > mouseX - 100 && this.x < mouseX + 100) {
           this.falling = false;
-          this.x = mouseX - this.x;
           counterToBlue = 60;
           specialBackgroundColor = color(240, 65, 65);
         }
@@ -229,56 +303,6 @@ class Sausage {
     ellipse(-34, 10, 30, 13);
     rotate(radians(130));
     ellipse(-34, -10, 30, 13);
-    pop();
-  }
-}
-
-class Ketchup {
-  constructor(ketchup, x, y) {
-    this.x = x;
-    this.y = y;
-
-    this.speedY = 8;
-    this.falling = true;
-  }
-  move() {
-    if (this.falling) {
-      let oldY = this.y;
-
-      this.y = this.y + this.speedY;
-
-      if (oldY <= 600 - 75 && this.y >= 600 - 75) {
-        if (this.x > mouseX - 100 && this.x < mouseX + 100) {
-          this.falling = false;
-          this.x = mouseX - this.x;
-          counterToBlue = 60;
-          specialBackgroundColor = color(200, 30, 30);
-        }
-      }
-    } else {
-      this.x = mouseX - 3;
-    }
-  }
-  display() {
-    push();
-    fill(200, 30, 30);
-    //stroke(135,20,20);
-    stroke(120, 45, 45);
-    strokeWeight(2);
-    translate(this.x, this.y);
-
-    //Package
-    rect(0, 0, 40, 70);
-    fill(255);
-    rect(5, 5, 30, 55);
-
-    //Tomato
-    fill(200, 30, 30);
-    ellipse(20, 40, 23, 17);
-    fill(45, 175, 85);
-    noStroke();
-    ellipse(20, 32, 15, 5);
-    rect(17, 25, 5, 7);
     pop();
   }
 }
