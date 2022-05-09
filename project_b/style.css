@@ -3,6 +3,7 @@ html, body {
   padding: 0;
   background-color: rgb(250, 190, 70);
 }
+
 canvas {
-  display: block;
+  display: inline-block;
 }
