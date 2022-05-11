@@ -1,8 +1,8 @@
 html, body {
   margin: 20px;
   padding: 0;
-  /* background-color: rgb(250, 190, 70); */
-  background-image: url("/project_b/images/traje_tipico.jpeg");
+  background-color: rgb(250, 190, 70);
+  /*background-image: url("/project_b/images/traje_tipico.jpeg");*/
   background-position: center;
 }
 
