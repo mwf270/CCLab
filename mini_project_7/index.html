@@ -5,13 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scales Patterns </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
         
         #container{
             width: 720px;
-            margin: 0 auto;
+            margin:0 auto;
+            padding-top: 40px;
+            padding-bottom: 20px;
+            text-align: center;
+            height: 200px;
             
         }
+        #container2{
+            width: 720px;
+            margin:0 auto;
+            padding-top: 40px;
+            padding-bottom: 20px;
+            text-align: center;
+            height: 200px;
+        }   
+        
+        #container3{
+            width: 720px;
+            margin:0 auto;
+            padding-top: 20px;
+            padding-bottom: 30px;
+            text-align: center;
+            height: 200px;
+        }    
         
         h1{
             background-color: violet;
@@ -21,7 +43,7 @@
         }
         p{
             padding: 15px 40px;
-            border: 1px solid black;
+            border: 1px solid violet;
             border-radius: 5px;
             margin: 40px 0;
         }
@@ -29,12 +51,13 @@
         width: 50%;
           float: left;  
           padding-bottom: 30px;
+          width: 225px;
+          height: auto;
+          padding-left: 10px;
+          text-align:center;
           
         }
     
-        #background{
-            background-color: blue;
-        }
     </style>
 </head>
 
@@ -44,25 +67,35 @@
 <p>This is the favorite sketch I have created. While I played around with the sketch, I found out that increasing the circles' width and height in the background will create an illusion of fish scales.
 </p>
 <p>My p5 sketch is below:</p>
-<div class="column">
-    <img src="images/Pattern 1.png" alt="Pattern 1" width="100%">
-</div>
-<div class="column">
-    <img src="images/Pattern 2.png" alt="Pattern 2" width="100%">
-</div>
-<div class="column">
-    <img src="images/Pattern 3.png" alt="Pattern 3" width="100%">
- </div>
- <div class="column">
-    <img src="images/Pattern 4.png" alt="Pattern 4" width="100%">
- </div>
-
- <div id="container">
-    <p>As you can see, this is the progression of my project</p>
-   <div> 
    </div>
+
+<div id="container2">
     
-   <p>This is the link to my project: </p>
+    <div class="column">
+        <a target="_blank" href="images/Pattern 2.png"></a>
+        <img src="images/Pattern 2.png" alt="Pattern 2" width="100%">
+    </div>
+
+
+    <div class="column">
+        <a target="_blank" href="images/Pattern 3.png"></a>
+        <img src="images/Pattern 3.png" alt="Pattern 3" width="100%">
+    </div>
+
+    <div class="column">
+        <a target="_blank" href="images/Pattern 4.png"></a>
+        <img src="images/Pattern 4.png" alt="Pattern 4" width="100%">
+    </div>
+</div>
+
+
+ <div id="container3">
+    <p>As you can see, this is the progression of my project</p>
+    
+   <p>This is the link to my
+   <a href="https://editor.p5js.org/mwf270/sketches/Mzw7RNLNL">p5js</a>!
+   </p>
+   </div>
    
 </body>
 </html>
